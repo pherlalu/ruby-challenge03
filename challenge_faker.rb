@@ -1,3 +1,8 @@
+# Name: Steffi Ann Tanya Amper
+# Created: 2023-06-01
+# Course: WEBD-3011 (255576) Agile Full Stack Web Development
+# Description: U3 - Active Record
+
 require 'faker'
 
 10.times do |i|
@@ -7,8 +12,8 @@ require 'faker'
     product = Product.create(
       name: "#{Faker::Coffee.variety}-#{i}-#{j}",
       description: Faker::Lorem.sentence,
-      price: Faker::Commerce.price, # generates a float between 0 and 100
-      stock_quantity: Faker::Number.between(1, 10), # generates an integer between 1 and 10
+      price: Faker::Commerce.price,
+      stock_quantity: Faker::Number.between(1, 10),
       category_id: category.id
     )
   end

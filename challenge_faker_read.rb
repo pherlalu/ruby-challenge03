@@ -1,3 +1,8 @@
+# Name: Steffi Ann Tanya Amper
+# Created: 2023-06-01
+# Course: WEBD-3011 (255576) Agile Full Stack Web Development
+# Description: U3 - Active Record
+
 load 'ar.rb'
 require 'pp'
 

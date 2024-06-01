@@ -1,5 +1,9 @@
-require_relative 'ar.rb'
+# Name: Steffi Ann Tanya Amper
+# Created: 2023-06-01
+# Course: WEBD-3011 (255576) Agile Full Stack Web Development
+# Description: U3 - Active Record
 
+require_relative 'ar.rb'
 
 # Use the Product class to find (any) product from the database.
 product = Product.first
@@ -14,7 +18,7 @@ products_above_10 = Product.where('price > ? AND name LIKE ?', 10, 'C%')
 puts "The names of all products above $10 with names that begin with the letter C:"
 products_above_10.each { |product| puts product.name }
 
-# Total number of products with a low stock quantity. (Low is defined as less than 5 in stock.)
+# Total number of products with a low stock quantity.
 low_stock_quantity_products = Product.where('stock_quantity < ?', 5).count
 puts "Total number of products with a low stock_quantity quantity: #{low_stock_quantity_products}"
 
@@ -27,7 +31,7 @@ puts "Category of the first product: #{product.category.name}"
 
 # Find a specific category and use it to build and persist a new product associated with this category.
 category = Category.find_by(name: 'Beverages') 
-new_product = category.products.build(name: 'Bud Light', price: 32, stock_quantity: 30) # Replace with actual column names and values
+new_product = category.products.build(name: 'Bud Light', description: 'beverage', price: 32, stock_quantity: 30)
 if new_product.save
   puts "New product '#{new_product.name}' has been created in the '#{category.name}' category."
 else
